@@ -11,8 +11,12 @@ const class1Scores = [89, 76, 91, 66, 88];
 const class2Scores = [72, 95, 84, 80, 78];
 
 // Fusionner les tableaux avec le spread operator
-
+const Scores = [
+    ...class1Scores,
+    ...class2Scores
+]
 // Trier les scores dans l'ordre croissant
+const sortedScores = Scores.sort()
 
 
 console.log('Scores triés :', sortedScores); // Affiche les scores triés
