@@ -4,11 +4,7 @@
 const numbers = [1, 3, 7, 8, 10];
 
 function findFirstEven(array) {
-    for(i = 0; array.length; i++) {
-        if (array[i] % 2 == 0) {
-            return array[i]
-        }
-    }
+    return array.find((el) => el % 2 == 0)
 }
 
 console.log(findFirstEven(numbers)); // 8
