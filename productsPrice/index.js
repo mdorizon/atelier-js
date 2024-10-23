@@ -17,8 +17,14 @@ const products = [
   ];
   
 // Appliquer une réduction de 20 % sur les produits en promotion
+const updatedProducts = [...products]
 
-  
+updatedProducts.forEach(el => {
+  if (el.name.includes('Promo')) {
+    el.price -= (el.price * 20) / 100
+  }
+});
+
 console.log('Produits originaux :', products); // Liste originale
 console.log('Produits mis à jour :', updatedProducts); // Liste avec réduction
   
