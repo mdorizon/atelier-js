@@ -15,16 +15,19 @@ const products = [
     { name: 'Pommes', price: 10, weight: 4 },
     { name: 'Bananes', price: 6, weight: 1.5 }
 ];
-  
-// Ajouter le prix par kilo à chaque produit
 
+// Ajouter le prix par kilo à chaque produit
+products.map((product) => product.pricePerKg = (product.price / product.weight))
 // Trier les produits par prix au kilo
-  
+products.sort((a, b) => a.pricePerKg - b.pricePerKg)
 // Afficher les produits avec leur prix par kilo
+products.forEach(product => {
+    console.log(`${product.name}: Prix total = ${product.price} €, Poids = ${product.weight} kg, Prix par kilo = ${product.pricePerKg} €/kg`)
+});
 
 
 // Résultat attendu :
+// Pommes: Prix total = 10 €, Poids = 4 kg, Prix par kilo = 2.50 €/kg
 // Riz: Prix total = 15 €, Poids = 5 kg, Prix par kilo = 3.00 €/kg
 // Farine: Prix total = 8 €, Poids = 2 kg, Prix par kilo = 4.00 €/kg
-// Pommes: Prix total = 10 €, Poids = 4 kg, Prix par kilo = 2.50 €/kg
 // Bananes: Prix total = 6 €, Poids = 1.5 kg, Prix par kilo = 4.00 €/kg
